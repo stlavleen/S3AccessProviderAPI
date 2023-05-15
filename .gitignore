@@ -1,4 +1,3 @@
 /.vs
-/[Dd]ebug
-/[Bb]in
-/[Oo]bj
+/S3AccessProviderAPI/bin
+/S3AccessProviderAPI/obj
