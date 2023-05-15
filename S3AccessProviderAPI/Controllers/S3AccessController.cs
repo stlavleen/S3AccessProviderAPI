@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -32,8 +33,8 @@ namespace S3AccessProviderAPI.Controllers
             {
                 return NotFound();
             }
-            //return await _context.Files.ToListAsync();
-            return await service.GetObjectsListAsync();
+            return await _context.Files.ToListAsync();
+            //return await service.GetObjectsListAsync();
         }
 
         // GET: api/S3Access/5
@@ -44,7 +45,10 @@ namespace S3AccessProviderAPI.Controllers
             {
                 return NotFound();
             }
-            var file = await _context.Files.FindAsync(id);
+
+            string decodedId = System.Net.WebUtility.UrlDecode(id);
+
+            var file = await _context.Files.FindAsync(decodedId);
 
             if (file == null)
             {
