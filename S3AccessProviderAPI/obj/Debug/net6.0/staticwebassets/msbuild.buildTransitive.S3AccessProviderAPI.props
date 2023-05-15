@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\S3AccessProviderAPI.props" />
-</Project>
