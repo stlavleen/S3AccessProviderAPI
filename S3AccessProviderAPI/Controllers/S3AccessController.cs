@@ -54,43 +54,6 @@ namespace S3AccessProviderAPI.Controllers
             return service.GetPermanentLink(id);
         }
 
-        //// PUT: api/S3Access/5
-        //// To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        //// Implemented according to the condition that the client is guaranteed to upload the file, 
-        //// otherwise need to wait for the temp link expiration, 
-        //// check s3 storage and update table if needed
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> PutFile(string id, File file)
-        //{
-        //    if (id != file.Key)
-        //    {
-        //        return BadRequest();
-        //    }
-
-        //    string url = string.Empty;
-        //    _context.Entry(file).State = EntityState.Modified;
-
-        //    try
-        //    {
-        //        await _context.SaveChangesAsync();
-        //        url = service.GetTemporaryLinkToUploadFile(file.Key);
-        //    }
-        //    catch (DbUpdateConcurrencyException)
-        //    {
-        //        if (!FileExists(id))
-        //        {
-        //            return NotFound();
-        //        }
-        //        else
-        //        {
-        //            throw;
-        //        }
-        //    }
-
-        //    //return NoContent();
-        //    return Content(url);
-        //}
-
         //POST: api/S3Access
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         // Implemented according to the condition that the client is guaranteed to upload the file, 

@@ -55,9 +55,9 @@ namespace S3AccessProviderAPI.Services
                 };
                 urlString = client.GetPreSignedURL(request);
             }
-            catch (AmazonS3Exception ex)
+            catch (AmazonS3Exception ex) // TODO: implement an exception handling
             {
-                Console.WriteLine($"Error:'{ex.Message}'");
+                Debug.WriteLine($"Error:'{ex.Message}'");
             }
 
             return urlString;
@@ -100,7 +100,7 @@ namespace S3AccessProviderAPI.Services
                 }
                 while (response.IsTruncated);
             }
-            catch (AmazonS3Exception ex) 
+            catch (AmazonS3Exception ex) // TODO: implement an exception handling
             {
                 Debug.WriteLine($"Error encountered on Amazon server. Message:'{ex.Message}' getting list of objects.");
             }
